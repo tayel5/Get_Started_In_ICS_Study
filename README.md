@@ -1,7 +1,7 @@
 # Get_Started_In_ICS_Study
 Going through Robert M Lee's Getting Started in ICS resources for personal enrichment!
 
-I've been interesting in learning more about ICS, I have several years experience d in CyberSecurity, but since Ive found this list put out by Robert M Lee I've wanted to go through all of it as a personal project to increase my understanding of ICS and improve my cyber security skills. I'm not exactly sure what this repo will end up looking like but I figure it'll at likely at least be the note-taking/cliff-note explanation of each resource
+I've been interesting in learning more about ICS, I have several years experience in CyberSecurity, but since Ive found this list put out by Robert M Lee I've wanted to go through all of it as a personal project to increase my understanding of ICS and improve my cyber security skills. I'm not exactly sure what this repo will end up looking like but I figure it'll at likely at least be the note-taking/cliff-note explanation of each resource
 
 https://www.robertmlee.org/a-collection-of-resources-for-getting-started-in-icsscada-cybersecurity/
 
