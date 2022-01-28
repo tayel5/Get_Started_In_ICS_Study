@@ -1,0 +1,14 @@
+Symbols learned so far in Learn Python the hard way
+( = opening bracket, commmonly used in defining variables for a function
+"" = quotations in print statements
+= = equals
+, = comma, used in breaking print statements to use variables
+/ = mathematical, divide function
+* = multiply function
++ = add function
+{} = used to add variables in line to string
+\n = new line in string
+""" = multi line string
+\t = tab in string
+\ = escape character, commonly used for special functions in strings
+: = opening character to define function
