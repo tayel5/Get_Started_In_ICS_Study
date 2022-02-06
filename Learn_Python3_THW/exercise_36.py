@@ -57,4 +57,8 @@ def start(attempt):
 
 
 num = 0
+print("Welcome to Greendale!")
+print("""You wake up in the study room and see two doors, 
+one takes you to the library proper, 
+the other takes you out to the courtyard""")
 start(num)
