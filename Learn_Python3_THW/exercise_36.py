@@ -1,64 +1,154 @@
 def cafeteria():
-    print("You are at the Cafeteria, you win!!!")
+    if key == 0:
+        print("You run, starving to the caferteria doors and attempt to open, oh no! Its locked by order of Emperor Chang!!!\n")
+        courtyard()
+    else:
+        print("You use the key on the cafeteria door and librate the food, the chicken finger mafia has already cleared out the chicken, but there are lots of Army MRE taco meat, tacos for everyone!!! You Win!!!")
+        print(""""...
+        ...
+        ...
+        ...
+        or did you?""")
 
 def admin():
     print("You are at the administration building")
+    global dean_beat
+    if dean_beat == 0:
+        print("The Dean spots you and intercepts you\n")
+        dean_battle()
+    else:
+        print("Lets not linger too long here or the Dean may appear again\n\n")
+        courtyard()
 
-def gym():
-    print("You are at the gym")
+def dean_battle():
+    print("The Dean comes at you with reckless Dean-bandon")
+    print("It seems your options are limited to handle the dean without murder")
+    print("What will you do?")
+    global dean_beat
+
+
+
+    while dean_beat == 0:
+        choice = input("(oculus)(animalsuit)(flexmuscles)> ")
+        if choice == "oculus":
+            print("The dean is distracted thinking he is some 3D god, get out of here to the cafeteria quick!")
+            dean_beat = 1
+            cafeteria()
+        elif choice == "animalsuit":
+            print("You try to compliment the Dean's magnificent animal suit, but alas that has just made the dean more powerful")
+        elif choice == "flexmuscles":
+            print("You flex your rippling muscles only to find the Dean enjoys the show, you've accomplished nothing")
+        else:
+            confusion()
+
+
 
 def vent():
-    print("Stuck in the vent with the monkey, you should've chang'd your response")
+    print("Stuck in the vent with the monkey, you should've chang'd your response\n")
 
-def courtyard(num):
+def courtyard():
     print("You are at the courtyard")
+    print("From here you can go to the admin building, the cafeteria, or back to the library")
+    print("What do you do?")
 
-def library(num):
+    choice = input("(admin)(cafeteria)(library)> ")
+
+    if choice == "admin":
+        admin()
+    elif choice == "cafeteria":
+        if dean_beat == 0:
+            print("On the way to the cafeteria you stray too close to the admin building and see the Dean!!!")
+            dean_battle()
+        else:
+            cafeteria()
+    elif choice == "library":
+        library()
+    else:
+        confusion()
+
+
+
+
+
+def key_encounter():
+    print("You look through the shelves and find the spanish 101 book!")
+    print("As you paw through the book you don't learn any more spanish but you find a key hidden inside!\n\n\n\n\n")
+    global key
+    key = 1
+    library()
+
+def library():
     print("You are now at the library")
+    print("As with many libraries there are bookshelves everywhere")
+    print("From here you can do stuff in the library, go back to the study room or go outside to the courtyard")
+    print("What do you you do?")
+    global attempt
+    choice = input("(bookshelves)(courtyard)(studyroom)> ")
 
-def sleep(why):
-    print(why)
+    if choice == "bookshelves":
+        if key == 0:
+            key_encounter()
+        else:
+            print("You continue to look around the library but find nothing but ladders 101 books and the remnants of the great civil pillow war")
+            library()
+    elif choice == "courtyard":
+        courtyard()
+    elif choice == "sleep":
+        sleep()
+
+def sleep():
+    print("You go back to sleep and deal with it another day")
     exit(0)
 
-def confusion(why,num):
-    print(why)
-    start(num)
+def confusion():
+    # When an unavailable choice is made, let them know they're confused
+    global attempt
+    if attempt == 0:
+        attempt += 1
+        print("Not sure what you're doing there...")
+    elif attempt == 1:
+        attempt += 1
+        print("Did you hit your head or something?")
+    elif attempt == 2:
+        attempt += 1
+        print("No, not like that.")
+    elif attempt == 3:
+        attempt += 1
+        print("Please refrain from creating multiple timelines without adequate felt goatees")
+    elif attempt == 4:
+        attempt += 1
+        print("You're wrinkling my brain.")
+    else:
+        attempt = 0
+        print("Let me chang your mind.")
+    start()
 
-def start(attempt):
+def start():
+    print("You're in the studyroom")
     print("What do you you do?")
+    global attempt
+    choice = input("(library)(courtyard)> ")
 
-    choice = input("(left)(right)> ")
-
-    if choice == "left":
-        library(attempt)
-    elif choice == "right":
-        courtyard(attempt)
+    if choice == "library":
+        library()
+    elif choice == "courtyard":
+        courtyard()
     elif choice == "vent":
         vent()
     elif choice == "sleep":
-        sleep("You go back to sleep and deal with it another day")
-    elif attempt == 0:
-        attempt += 1
-        confusion("Not sure what you're doing there...", attempt)
-    elif attempt == 1:
-        attempt += 1
-        confusion("Did you hit your head or something?", attempt)
-    elif attempt == 2:
-        attempt += 1
-        confusion("No, not like that.", attempt)
-    elif attempt == 3:
-        attempt += 1
-        confusion("Please refrain from creating multiple timelines without adequate felt goatees", attempt)
-    elif attempt == 4:
-        attempt += 1
-        confusion("You're wrinkling my brain.", attempt)
+        sleep()
     else:
-        confusion("Clear your mind.", attempt)
+        confusion()
 
 
-num = 0
+
+attempt = 0
+key = 0
+dean_beat = 0
 print("Welcome to Greendale!")
-print("""You wake up in the study room and see two doors, 
-one takes you to the library proper, 
-the other takes you out to the courtyard""")
-start(num)
+print("""You wake up in the study room with an enormous hunger, like really really bad hunger
+you need to go to the cafeteria and eat something
+you get up from the couch and see two doors, 
+left takes you to the library proper, 
+the right takes you out to the courtyard""")
+start()
